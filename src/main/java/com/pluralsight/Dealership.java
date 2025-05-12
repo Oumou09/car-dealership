@@ -36,8 +36,9 @@ public class Dealership {
 
     }
 
-    public void addVehicle(Vehicle vehicle){
-//        vehicle.add(vehicle);
+    public String addVehicle(Vehicle vehicle){
+        vehicles.add(vehicle);
+        return " Vehicle added successfully!";
 
     }
     public void remoteVehicle(int vin){
