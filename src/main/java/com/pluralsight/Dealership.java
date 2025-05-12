@@ -7,6 +7,12 @@ public class Dealership {
     private String address;
     private String phone;
 
+    public Dealership(String name, String address, String phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+
     ArrayList<Vehicle> vehicles;
 
     ArrayList<Vehicle> getVehiclesByPrice(double min, double max){
@@ -29,7 +35,9 @@ public class Dealership {
     ArrayList<Vehicle> getVehiclesByType(String type){
 
     }
-    public void addVehicle(int vin){
+
+    public void addVehicle(Vehicle vehicle){
+//        vehicle.add(vehicle);
 
     }
     public void remoteVehicle(int vin){
