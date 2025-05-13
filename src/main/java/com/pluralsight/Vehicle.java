@@ -1,7 +1,8 @@
 package com.pluralsight;
 
 public class Vehicle {
-private int vin;
+    public double getPrice;
+    private int vin;
 private int year;
 private String make;
 private String model;
@@ -89,13 +90,6 @@ private double price;
     @Override
     public String toString() {
         return "Vehicle" +
-                "vin=" + vin +
-                ", year=" + year +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", color='" + color + '\'' +
-                ", odometer=" + odometer +
-                ", price=" + price;
+                 vin + "|" + year + "|" + make + '\'' + model + '\'' + vehicleType + '\'' + color + '\'' + odometer + price;
     }
 }

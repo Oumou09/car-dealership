@@ -1,6 +1,9 @@
 package com.pluralsight;
 
 import java.awt.desktop.QuitEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,12 +13,20 @@ public class UserInterface {
     private void init() {
         DealershipFileManager fileManager = new DealershipFileManager();
 
+
     }
 
     public void display(){
         init();
+        try {
+            BufferedReader br = new FileReader(" dealership.csv");
+        } catch (Exception e){
+            e.printStackTrace();
 
-            Scanner scanner= new Scanner(System.in);
+        }
+
+
+        Scanner scanner= new Scanner(System.in);
             boolean keepRunning = true;
             while(keepRunning){
                 System.out.println();
@@ -53,8 +64,8 @@ public class UserInterface {
                          break;
                     case "9": processRemoveVehicleRequest();
                         break;
-
                     case "X": keepRunning = false;
+                    break;
                     default:
                         System.out.println("Invalid option - please try again");
                             return;
