@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +36,6 @@ public class Dealership {
         return getVePrice;
 
     }
-
    public List<Vehicle> getVehiclesByMakeModel(String make, String model){
        List<Vehicle> matchingMakeModel  = new ArrayList<>();;
         for (Vehicle v : vehicles) {
@@ -102,19 +103,22 @@ public class Dealership {
     }
 
     public void addVehicle(Vehicle vehicle){
-        vehicles.add(vehicle);
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("dealership.csv"));
+            String line;
+            vehicles.add(vehicle);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void removeVehicle(int vin){
-
         for(Vehicle v : vehicles){
             if(v.getVin() == vin){
                 vehicles.remove(v);
             }
-
         }
-
-        return "Vehicle with VIN" + vin + "not found.";
 
     }
 
