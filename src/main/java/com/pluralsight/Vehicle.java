@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Vehicle {
-    private final ArrayList<Object> vehicles;
+   // private final ArrayList<Object> vehicles;//
     private int vin;
 private int year;
 private String make;
@@ -23,7 +23,7 @@ private double price;
         this.color = color;
         this.odometer = odometer;
         this.price = price;
-        this.vehicles = new ArrayList<>();
+//        this.vehicles = new ArrayList<>();
     }
 
     public int getVin() {

@@ -14,12 +14,13 @@ public class Dealership {
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.vehicles = new ArrayList<>();
     }
 
-//    ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
+//  ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
 
 
-//    ArrayList<Vehicle> vehicles;
+//  ArrayList<Vehicle> vehicles;
 
     ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
         ArrayList<Vehicle> getVePrice = new ArrayList<>();
@@ -105,10 +106,10 @@ public class Dealership {
 //        return getVehiclesByType();
     }
 
-//    public String addVehicle(Vehicle vehicle){
-//        vehicles.add(vehicle);
-//        return " Vehicle added successfully!";
-//    }
+    public String addVehicle(Vehicle vehicle){
+        vehicles.add(vehicle);
+        return " Vehicle added successfully!";
+    }
     public String removeVehicle(int vin){
 
         for(Vehicle v : vehicles){
