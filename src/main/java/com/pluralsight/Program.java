@@ -15,10 +15,10 @@ public class Program {
 
         Dealership dealership = fileManager.getDealership();
 
-        if (dealership == null) {
-            System.out.println("Failed to load dealership.");
-            return;
-        }
+//        if (dealership == null) {
+//            System.out.println("Failed to load dealership.");
+//            return;
+//        }
 
 //        ArrayList<Vehicle> vehicles = dealership.getAllVehicles(); // or getAllVehicles()
 //
