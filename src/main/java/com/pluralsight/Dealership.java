@@ -102,16 +102,20 @@ public class Dealership {
 //        return getVehiclesByType();
     }
 
-    public void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("dealership.csv"));
-            String line;
+            writer.write(vehicle.toString());
+            writer.newLine();
             vehicles.add(vehicle);
-        } catch (Exception e) {
+
+            writer.close();
+            }catch(Exception e){
             throw new RuntimeException(e);
+
         }
 
-    }
+        }
 
     public void removeVehicle(int vin){
         for(Vehicle v : vehicles){
