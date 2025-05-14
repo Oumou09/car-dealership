@@ -14,8 +14,8 @@ public class UserInterface {
     private void init() {
  DealershipFileManager fileManager = new DealershipFileManager();
 this.dealership = fileManager.getDealership();
-//
-//Now it's safe to access it!
+
+
 //System.out.println("Loaded " + dealership.getAllVehicle() + " vehicles.");
     }
 

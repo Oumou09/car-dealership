@@ -13,23 +13,23 @@ public class Program {
 
         DealershipFileManager fileManager = new DealershipFileManager();
 
-        Dealership dealership = fileManager.getDealership();  // Load from dealership.csv
+        Dealership dealership = fileManager.getDealership();
 
         if (dealership == null) {
             System.out.println("Failed to load dealership.");
             return;
         }
 
-        ArrayList<Vehicle> vehicles = dealership.getAllVehicles(); // or getAllVehicles()
-
-        if (vehicles == null || vehicles.isEmpty()) {
-            System.out.println("No vehicles found.");
-        } else {
-            System.out.println("Loaded " + vehicles.size() + " vehicles:");
-            for (Vehicle v : vehicles) {
-                System.out.println(v);
-            }
-        }
+//        ArrayList<Vehicle> vehicles = dealership.getAllVehicles(); // or getAllVehicles()
+//
+//        if (vehicles == null || vehicles.isEmpty()) {
+//            System.out.println("No vehicles found.");
+//        } else {
+//            System.out.println("Loaded " + vehicles.size() + " vehicles:");
+//            for (Vehicle v : vehicles) {
+//                System.out.println(v);
+//            }
+//        }
     }
 
 }
