@@ -1,7 +1,9 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+
 public class Vehicle {
-    public double getPrice;
+    private final ArrayList<Object> vehicles;
     private int vin;
 private int year;
 private String make;
@@ -21,6 +23,7 @@ private double price;
         this.color = color;
         this.odometer = odometer;
         this.price = price;
+        this.vehicles = new ArrayList<>();
     }
 
     public int getVin() {
@@ -89,7 +92,7 @@ private double price;
 
     @Override
     public String toString() {
-        return "Vehicle" +
-                 vin + "|" + year + "|" + make + '\'' + model + '\'' + vehicleType + '\'' + color + '\'' + odometer + price;
+        return vin + "|" + year + "|" + make + "|" + model + "|" + vehicleType + "|" + color + "|" + odometer + "|" + price;
     }
+
 }

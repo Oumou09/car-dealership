@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class DealershipFileManager {
     Dealership getDealership() {
-        Dealership dealership = null;
+        Dealership dealership = new Dealership("Oumou","538 W 50th St", "347-111-2222");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("dealership.csv"));
@@ -31,14 +31,16 @@ public class DealershipFileManager {
                 double price = Double.parseDouble(parts[7]);
 
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-                dealership.addVehicle(vehicle);
+//              dealership.addVehicle(vehicle);
+                System.out.println(vehicle);
 
 
             }
             reader.close();
 
         } catch (IOException ioException) {
-            System.out.println("Error reading data file: " + ioException.getMessage());
+            System.out.println("First vehicle: " + dealership.getAllVehicles().get(0));
+
         }
         return dealership;
 

@@ -9,21 +9,24 @@ import java.util.Scanner;
 
 public class UserInterface {
 
+    private Dealership dealership;
 
     private void init() {
-        DealershipFileManager fileManager = new DealershipFileManager();
-
-
+ DealershipFileManager fileManager = new DealershipFileManager();
+this.dealership = fileManager.getDealership();
+//
+//Now it's safe to access it!
+//System.out.println("Loaded " + dealership.getAllVehicle() + " vehicles.");
     }
 
     public void display(){
-        init();
-        try {
-            BufferedReader br = new FileReader(" dealership.csv");
-        } catch (Exception e){
-            e.printStackTrace();
-
-        }
+       init();
+//        try {
+//            BufferedReader br = new FileReader("dealership.csv");
+//        } catch (Exception e){
+//            e.printStackTrace();
+//
+//        }
 
 
         Scanner scanner= new Scanner(System.in);
@@ -64,7 +67,7 @@ public class UserInterface {
                          break;
                     case "9": processRemoveVehicleRequest();
                         break;
-                    case "X": keepRunning = false;
+                    case "x": keepRunning = false;
                     break;
                     default:
                         System.out.println("Invalid option - please try again");
@@ -76,6 +79,17 @@ public class UserInterface {
             scanner.close();
 
         }
+
+
+    public void displayVehicles(ArrayList<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            System.out.println("Error vehicle field is empty");
+        } else {
+            for (Vehicle v : vehicles) {
+            System.out.println(v);
+        }
+        }
+    }
 
 
     public void processGetByPriceRequest(){
@@ -97,8 +111,10 @@ public class UserInterface {
     }
 
     private void processGetAllVehiclesRequest(){
+        displayVehicles(dealership.getAllVehicles());
 
-        }
+
+    }
 
     public void processAddVehicleRequest(){
 
@@ -106,5 +122,6 @@ public class UserInterface {
     public void processRemoveVehicleRequest(){
 
     }
+
 
 }
