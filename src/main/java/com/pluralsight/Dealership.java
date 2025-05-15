@@ -4,7 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Dealership {
     private String name;
@@ -20,7 +19,9 @@ public class Dealership {
         this.vehicles = new ArrayList<>();
     }
 
-//  ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
+    Dealership dealership = null;
+
+// ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
 
 
 //  ArrayList<Vehicle> vehicles;
@@ -57,7 +58,7 @@ public class Dealership {
    public List<Vehicle> getVehiclesByYear(int min, int max){
        List<Vehicle> matchingYear  = new ArrayList<>();
         for (Vehicle v : vehicles) {
-            if (v.getPrice() >= min && v.getPrice() <= max) {
+            if (v.getYear() >= min && v.getYear() <= max) {
                 matchingYear.add(v);
 
             }
@@ -80,7 +81,7 @@ public class Dealership {
     public List<Vehicle> getVehiclesByMileage( int min, int max){
         List<Vehicle> matchingMileage = new ArrayList<>();
         for (Vehicle v : vehicles) {
-            if (v.getPrice() >= min && v.getPrice() <= max) {
+            if (v.getOdometer() >= min && v.getOdometer() <= max) {
                 matchingMileage.add(v);
 
             }
@@ -105,9 +106,11 @@ public class Dealership {
     public void addVehicle(Vehicle vehicle) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("dealership.csv"));
-            writer.write(vehicle.toString());
-            writer.newLine();
-            vehicles.add(vehicle);
+           for(Vehicle v : vehicles) {
+               writer.write(String.valueOf(v));
+               writer.newLine();
+               vehicles.add(vehicle);
+           }
 
             writer.close();
             }catch(Exception e){
@@ -115,14 +118,37 @@ public class Dealership {
 
         }
 
+    }
+
+    public void removeVehicle(int vin) {
+        for (int i = 0; i < vehicles.size(); i++) {
+            Vehicle v = vehicles.get(i);
+            if (v.getVin() == vin) {
+                vehicles.remove(i);
+            }
+
+
+
+
         }
 
-    public void removeVehicle(int vin){
-        for(Vehicle v : vehicles){
-            if(v.getVin() == vin){
-                vehicles.remove(v);
-            }
-        }
+
+
+//        List<Vehicle> removeVehicle = new ArrayList<>();
+//        while (removeVehicle.iterator().hasNext()) {
+//        Vehicle v = List < vehicles > removeVehicle;
+//        if (v.getVin() == vin) {
+//            removeVehicle.remove(v);
+//
+//
+//        }
+    }
+
+//        if(Vehicle v : vehicles){
+//            if(v.getVin() == vin){
+//                vehicles.remove(v);
+//            }
+//        }
 
     }
 
@@ -136,4 +162,4 @@ public class Dealership {
 
 
 
-}
+

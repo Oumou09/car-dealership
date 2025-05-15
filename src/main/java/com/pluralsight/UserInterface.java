@@ -119,8 +119,10 @@ this.dealership = fileManager.getDealership();
     public void processGetByMakeModelRequest(){
         System.out.println("Enter vehicle make: ");
         String make = scanner.nextLine();
+       scanner.nextLine();
         System.out.println("Enter vehicle model: ");
         String model = scanner.nextLine();
+        scanner.nextLine();
         List<Vehicle> vehicles =  dealership.getVehiclesByMakeModel(make,model);
         displayVehicles(vehicles);
 
@@ -129,8 +131,10 @@ this.dealership = fileManager.getDealership();
     public void processGetByYearRequest(){
         System.out.println("Enter vehicle minimum year: ");
         int min = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter vehicle maximum year: ");
         int max = scanner.nextInt();
+        scanner.nextLine();
 
         List<Vehicle> vehicles =  dealership.getVehiclesByYear(min, max);
         displayVehicles(vehicles);
@@ -148,8 +152,10 @@ this.dealership = fileManager.getDealership();
     public void processGetByMileageRequest(){
         System.out.println("Enter vehicle minimum mileage: ");
         int min = scanner.nextInt();
-        System.out.println("Enter vehicle maximum year: ");
+        scanner.nextLine();
+        System.out.println("Enter vehicle maximum mileage: ");
         int max = scanner.nextInt();
+        scanner.nextLine();
 
         List<Vehicle> vehicles =  dealership.getVehiclesByMileage(min, max);
         displayVehicles(vehicles);
@@ -159,6 +165,7 @@ this.dealership = fileManager.getDealership();
     public void processGetByTypeRequest() {
         System.out.println("Enter vehicle type: ");
         String vehicleType = scanner.nextLine();
+        scanner.nextLine();
         List<Vehicle> vehicles =  dealership.getVehiclesByType(vehicleType);
         displayVehicles(vehicles);
     }
@@ -191,13 +198,15 @@ this.dealership = fileManager.getDealership();
         double price = scanner.nextDouble();
         scanner.nextLine();
         Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-        dealership.addVehicle(vehicle);
+       dealership.addVehicle(vehicle);
 
     }
     public void processRemoveVehicleRequest(){
         System.out.println("Enter the vin number of the vehicle you want removed: ");
         int vin = scanner.nextInt();
         dealership.removeVehicle(vin);
+
+
 
     }
 
