@@ -6,7 +6,7 @@ This Java console application manages a car dealership inventory system. It allo
 
 ## User Stories
 
--As a user, I want to search for vehicles within a specific price range, so that I can find options that fit my budget.
+- As a user, I want to search for vehicles within a specific price range, so that I can find options that fit my budget.
 - As a user, I want to be able to find vehicles by color, so I can find a vehicles that is my favorite color.
 - As a user, I want to search for vehicles within a specific year range, so that I can find cars that are newer or within a certain age.
 - As a user, I want to search for vehicles within a specific year range, so that I can find cars that are newer or within a certain age.
