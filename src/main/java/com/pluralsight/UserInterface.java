@@ -74,7 +74,6 @@ this.dealership = fileManager.getDealership();
                     break;
                     default:
                         System.out.println("Invalid option - please try again");
-                            return;
                 }
 
 
@@ -96,14 +95,7 @@ this.dealership = fileManager.getDealership();
 
 
     public void processGetByPriceRequest(){
-//        dealership.getVehiclesByPrice();
-//      System.out.println("What price point would you like to shop at?");
-//       double matchUserPrice = scanner.nextDouble();
-//       if (vehicles.getPrice == matchUserPrice){
-//           System.out.println(vehicles);
-//       }
-//        if(matchUserPrice.isEmpty()){
-//        }
+
         System.out.println("Enter minimum price:");
         double min = scanner.nextDouble();
 
@@ -199,12 +191,21 @@ this.dealership = fileManager.getDealership();
         scanner.nextLine();
         Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
        dealership.addVehicle(vehicle);
+       DealershipFileManager fileManager = new DealershipFileManager();
+       fileManager.saveDealership(dealership);
+
+        System.out.println("Vehicle added successfully");
 
     }
     public void processRemoveVehicleRequest(){
         System.out.println("Enter the vin number of the vehicle you want removed: ");
         int vin = scanner.nextInt();
         dealership.removeVehicle(vin);
+
+        DealershipFileManager fileManager = new DealershipFileManager();
+        fileManager.saveDealership(dealership);
+
+        System.out.println("Vehicles removed successfully!");
 
 
 

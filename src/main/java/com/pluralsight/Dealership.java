@@ -19,12 +19,31 @@ public class Dealership {
         this.vehicles = new ArrayList<>();
     }
 
-    Dealership dealership = null;
 
-// ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
-//  ArrayList<Vehicle> vehicles;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
 
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
         List<Vehicle> getVePrice = new ArrayList<>();
@@ -45,7 +64,6 @@ public class Dealership {
 
             }
         }
-
 
         return matchingMakeModel;
     }
@@ -114,7 +132,7 @@ public class Dealership {
 
             writer.close();
             }catch(Exception e){
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error adding to file",e);
 
         }
 
@@ -126,6 +144,7 @@ public class Dealership {
             if (v.getVin() == vin) {
                 vehicles.remove(i);
             }
+            break;
 
 
 
