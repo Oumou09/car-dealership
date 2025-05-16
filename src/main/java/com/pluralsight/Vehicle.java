@@ -23,7 +23,7 @@ private double price;
         this.color = color;
         this.odometer = odometer;
         this.price = price;
-//        this.vehicles = new ArrayList<>();
+
     }
 
     public int getVin() {

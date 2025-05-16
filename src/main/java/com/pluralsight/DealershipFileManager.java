@@ -51,7 +51,7 @@ public class DealershipFileManager {
             }
 
             try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter("dealership_info.csv"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("dealership.csv"));
                 writer.write(dealership.getName() + "," + dealership.getAddress() + "," + dealership.getPhone());
                 writer.newLine();
                 writer.close();

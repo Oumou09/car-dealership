@@ -116,9 +116,7 @@ public class Dealership {
             }
         }
         return matchingVehicles;
-//
-//
-//        return getVehiclesByType();
+
     }
 
     public void addVehicle(Vehicle vehicle) {
@@ -139,7 +137,7 @@ public class Dealership {
     }
 
     public void removeVehicle(int vin) {
-        for (int i = 0; i < vehicles.size(); i++) {
+        for (int i = 0; i < vehicles.size();){
             Vehicle v = vehicles.get(i);
             if (v.getVin() == vin) {
                 vehicles.remove(i);
@@ -151,23 +149,8 @@ public class Dealership {
 
         }
 
-
-
-//        List<Vehicle> removeVehicle = new ArrayList<>();
-//        while (removeVehicle.iterator().hasNext()) {
-//        Vehicle v = List < vehicles > removeVehicle;
-//        if (v.getVin() == vin) {
-//            removeVehicle.remove(v);
-//
-//
-//        }
     }
 
-//        if(Vehicle v : vehicles){
-//            if(v.getVin() == vin){
-//                vehicles.remove(v);
-//            }
-//        }
 
     }
 

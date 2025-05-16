@@ -17,19 +17,10 @@ public class UserInterface {
     private void init() {
  DealershipFileManager fileManager = new DealershipFileManager();
 this.dealership = fileManager.getDealership();
-
-
-//System.out.println("Loaded " + dealership.getAllVehicle() + " vehicles.");
     }
 
     public void display(){
        init();
-//        try {
-//            BufferedReader br = new FileReader("dealership.csv");
-//        } catch (Exception e){
-//            e.printStackTrace();
-//
-//        }
 
 
         Scanner scanner= new Scanner(System.in);
@@ -98,9 +89,12 @@ this.dealership = fileManager.getDealership();
 
         System.out.println("Enter minimum price:");
         double min = scanner.nextDouble();
+        scanner.nextLine();
 
         System.out.println("Enter maximum price:");
         double max = scanner.nextDouble();
+        scanner.nextLine();
+
         List<Vehicle> vehicles =  dealership.getVehiclesByPrice(min, max);
         displayVehicles(vehicles);
 
